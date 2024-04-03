@@ -1,5 +1,8 @@
 package controllers
 
+
+import com.example.lib1.Lib1.echoMessage
+
 import javax.inject._
 import play.api._
 import play.api.mvc._
@@ -18,7 +21,9 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index() = Action { implicit request: Request[AnyContent] =>
+  def index() = Action { implicit request: Request[AnyContent] => {
+    echoMessage("sample")
     Ok(views.html.index())
+  }
   }
 }
